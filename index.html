@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BMI </h1>
+    <form onsubmit=" BMIRuslt();return false;" >
+    
+    <input type="text" name="weight" id="weight" placeholder="Weight in kilogram">
+    <input type="text" name="height" id="height" placeholder="Height in meter"><br><br>
+     <button>save</button>
+     </form>
+
+     <div id="BMI-Ruslt"></div>
+
+     <script>
+        function BMIRuslt(){
+            weightInputRef = document.querySelector("#weight")
+            heightInputRef = document.querySelector("#height")
+
+          const  weight =Number(weightInputRef.value)
+          const  height =Number(heightInputRef.value)
+          const  bmi =  weight / (height**2)
+          
+          const RusltDivRef = document.querySelector("#BMI-Ruslt")
+          RusltDivRef.innerHTML = `${ bmi.toFixed(2) }Bmi ruslt`
+          console.log(weight)
+          console.log(height)
+          console.log(bmi)
+        }
+     </script>
+
+     <h2>General Pressure</h2>
+
+     <form onsubmit="PressureCalculator() ; return false;" >
+
+         <input type="text" name="Force" id="Force" placeholder=" Enter Force">
+         <input type="text" name="area" id="area" placeholder=" Enter total area"><br><br>
+        <button>submit</button>
+
+     </form>
+
+     <div id="Total-Pressure"></div>
+
+     <script>
+        function PressureCalculator(){
+            forcInputRef = document.querySelector("#Force")
+            areInputRef = document.querySelector("#area")
+
+          const  force = Number(forcInputRef.value)
+          const  area = Number(arecInputRef.value)
+          const pressure = force / area
+
+         const toDivRef = document.querySelector("#Total-Pressure")
+         toDivRef.innerHTML = `${pressure.toFixed(4)} total-pressure`
+
+            console.log(force)
+            console.log(area)
+            console.log(pressure)
+        }
+
+     </script>
+
+
+</body>
+</html>
